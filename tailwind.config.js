@@ -2,18 +2,20 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    fontFamily: {
-      sans: ["Graphik", "sans-serif"],
-      serif: ["Merriweather", "serif"],
+    extend: {
+      fontFamily: {
+        sans: ["Graphik", "sans-serif"],
+        serif: ["Merriweather", "serif"],
+      },
+
+      colors: {
+        primary: "#353941",
+        secondary: "#26282B",
+        darkBlue: "#5F85DB",
+        lightBlue: "#90B8F8",
+        white: "#FFFFFF",
+      },
     },
-    colors: {
-      primary: "#353941",
-      secondary: "#26282B",
-      darkBlue: "#5F85DB",
-      lightBlue: "#90B8F8",
-      white: "#FFFFFF",
-    },
-    extend: {},
   },
   plugins: [],
 };

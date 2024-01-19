@@ -5,7 +5,7 @@ interface ILayout {
 }
 
 const Layout: FC<ILayout> = ({ children }) => {
-  return <div className="md:flex">{children}</div>;
+  return <div className="md:flex bg-secondary text-white">{children}</div>;
 };
 
 export default Layout;
