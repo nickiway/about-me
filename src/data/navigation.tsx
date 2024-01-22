@@ -5,51 +5,34 @@ const Links = {
     {
       path: "/",
       label: "S",
-      classNameList: "text-6xl font-bold",
-    },
-    {
-      path: "projects",
-      label: "Projects",
-      classNameList: "py-5 rotate-180 flex",
-      styles: { writingMode: "vertical-rl" },
-      activeClassName: "text-primary",
+      classNameList: "text-6xl bitter",
     },
     {
       path: "about",
       label: "About",
-      classNameList: "py-5 rotate-180 flex",
-      styles: { writingMode: "vertical-rl" },
-      activeClassName: "text-primary",
+      classNameList: "py-5 rotate-180 flex [writing-mode:vertical-lr]",
+      activeClassName: "text-lightBlue",
     },
     {
       path: "contact",
       label: "Contact",
-      classNameList: "py-5 rotate-180 flex",
-      styles: { writingMode: "vertical-rl" },
-      activeClassName: "text-primary",
+      classNameList: "py-5 rotate-180 flex [writing-mode:vertical-lr]",
+      activeClassName: "text-lightBlue",
     },
   ],
   socials: [
     {
       icon: GitHub,
       path: "https://github.com/nickiway",
-      style: {
-        height: "24px",
-      } as React.CSSProperties,
     },
     {
       icon: LinkedIn,
       path: "https://www.linkedin.com/in/nickiway/",
-      style: {
-        height: "24px",
-      } as React.CSSProperties,
     },
     {
       icon: Instagram,
       path: "https://www.instagram.com/nickiway_/",
-      style: {
-        height: "24px",
-      } as React.CSSProperties,
+      classNameList: "[height:24px]",
     },
   ],
 };

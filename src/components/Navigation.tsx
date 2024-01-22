@@ -1,9 +1,8 @@
 import { NavLink, Link } from "react-router-dom";
-import Nav from "../data/navigation";
-import { Icon } from "@mui/material";
+import NavigationData from "../data/navigation";
 
 const Navigation = () => {
-  const { routes, socials } = Nav;
+  const { routes, socials } = NavigationData;
 
   // active style handler
   const activeStyle = (
@@ -12,7 +11,7 @@ const Navigation = () => {
     isActive: boolean
   ) => {
     return isActive
-      ? [activeClassName, classNameList].join(" ")
+      ? [classNameList, activeClassName].join(" ")
       : classNameList;
   };
 
@@ -20,31 +19,24 @@ const Navigation = () => {
     <header>
       <nav className="sticky top-0 h-screen px-10 py-5">
         <ul className="h-3/4 flex flex-col">
-          {routes.map(
-            ({ path, label, classNameList, styles, activeClassName }) => (
-              <li key={path}>
-                <div>
-                  <NavLink
-                    style={styles as React.CSSProperties}
-                    className={({ isActive }) =>
-                      activeStyle(classNameList, activeClassName, isActive)
-                    }
-                    to={path}
-                  >
-                    {label}
-                  </NavLink>
-                </div>
-              </li>
-            )
-          )}
+          {routes.map(({ path, label, classNameList, activeClassName }) => (
+            <li key={path}>
+              <NavLink
+                className={({ isActive }) =>
+                  activeStyle(classNameList, activeClassName, isActive)
+                }
+                to={path}
+              >
+                {label}
+              </NavLink>
+            </li>
+          ))}
         </ul>
         <ul className="h-1/4 flex flex-col flex-col-reverse">
-          {socials.map(({ icon: IconComponent, path, style }) => (
-            <li key={path} className="my-3">
+          {socials.map(({ icon: IconComponent, path }) => (
+            <li key={path} className="py-3">
               <Link target="blank" to={path}>
-                <div className="flex justify-center" key={path}>
-                  {IconComponent && <IconComponent style={style} />}
-                </div>
+                {IconComponent && <IconComponent style={{ height: "24px" }} />}
               </Link>
             </li>
           ))}

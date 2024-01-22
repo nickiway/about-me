@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Navigation from "./components/Navigation";
-import Layout from "./components/Layout";
+import WrapperLayout from "./components/WrapperLayout";
 
 import { Home, NotFound, About, ContactPage } from "./pages";
 
@@ -10,7 +10,7 @@ import "./assets/styles/global.css";
 function App() {
   return (
     <Router>
-      <Layout>
+      <WrapperLayout>
         <Navigation />
         <Routes>
           <Route index element={<Home />}></Route>
@@ -18,7 +18,7 @@ function App() {
           <Route path="contact" element={<ContactPage />}></Route>
           <Route path="*" element={<NotFound />}></Route>
         </Routes>
-      </Layout>
+      </WrapperLayout>
     </Router>
   );
 }
