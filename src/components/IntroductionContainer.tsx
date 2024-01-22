@@ -16,15 +16,15 @@ const IntroductionContainer: FC<IIntroductionContainer> = ({ data }) => {
     <div className="h-screen flex items-center justify-center w-full">
       <div>
         {/* author */}
-        <div>
-          <span className="uppercase text-3xl tracking-[.50em]">{author}</span>
+        <div className="pb-10">
+          <span className="uppercase text-2xl tracking-[.50em]">{author}</span>
         </div>
 
         {/* proffesion + separator */}
         <div className="flex">
           <span className="text-8xl">{profession}</span>
           <div className="flex items-center justify-center">
-            <div className="w-52 h-1 rounded-full bg-lightBlue mx-5"></div>
+            <div className="w-80 h-1 rounded-full bg-lightBlue mx-5"></div>
           </div>
         </div>
 

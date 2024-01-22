@@ -15,7 +15,7 @@ const ThemeToggle: FC<ThemeToggleProps> = () => {
   };
 
   return (
-    <button className="fixed top-5 right-10 " onClick={handleThemeChange}>
+    <button className="fixed top-10 right-10 " onClick={handleThemeChange}>
       <div className="w-10 h-10 dark:bg-lightBlue bg-darkBlue text-white rounded-full flex items-center justify-center text-2xl">
         {value === "dark" ? <DarkMode /> : <LightMode />}
       </div>

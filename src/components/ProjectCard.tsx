@@ -27,7 +27,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
   return (
     <div className="flex justify-center my-10" id="test">
       <div className="container grid grid-cols-2 ">
-        <div className="wrapper pl-[20%]">
+        <div className="wrapper pl-[10%]">
           <div className="flex py-5">
             <Separator />
             <p className="dark:text-white px-5">{handleIndex()}</p>

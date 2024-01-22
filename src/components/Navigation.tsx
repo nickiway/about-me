@@ -17,7 +17,7 @@ const Navigation = () => {
 
   return (
     <header>
-      <nav className="sticky top-0 h-screen px-10 py-5">
+      <nav className="sticky top-0 h-screen px-10 py-10">
         <ul className="h-3/4 flex flex-col">
           {routes.map(({ path, label, classNameList, activeClassName }) => (
             <li key={path}>

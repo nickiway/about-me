@@ -7,8 +7,8 @@ const Home = () => {
   // data for IntroductionContainer
   const authorData = {
     author: "Nick Shkitak",
-    profession: "Frontend developer",
-    lyrics: ["+ Designer", "+ Coder"],
+    profession: "Developer",
+    lyrics: ["Designer", "Coder"],
   };
 
   const sample = {

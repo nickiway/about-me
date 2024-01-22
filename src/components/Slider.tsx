@@ -17,7 +17,10 @@ const Slider: FC<SliderProps> = ({ lyrics, intervalTime }) => {
 
   return (
     <div>
-      <span className="text-8xl text-lightBlue">{currentLyric}</span>
+      <p className="text-8xl text-lightBlue">
+        <span className="text-gray-500 text-bold pr-5 font-bold">+</span>
+        {currentLyric}
+      </p>
     </div>
   );
 };
