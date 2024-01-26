@@ -1,13 +1,12 @@
-import { FC } from "react";
-import { useContext } from "react";
+import { useContext, FC } from "react";
 import { ThemeContext } from "../context/ThemeContext";
 import { DarkMode, LightMode } from "@mui/icons-material";
 
 interface ThemeToggleProps {
-  test?: string;
+  classNameList?: string;
 }
 
-const ThemeToggle: FC<ThemeToggleProps> = () => {
+const ThemeToggle: FC<ThemeToggleProps> = ({ classNameList }) => {
   const { value, setValue } = useContext(ThemeContext);
 
   const handleThemeChange = () => {
@@ -15,7 +14,7 @@ const ThemeToggle: FC<ThemeToggleProps> = () => {
   };
 
   return (
-    <button className="fixed top-10 right-10 " onClick={handleThemeChange}>
+    <button className={classNameList} onClick={handleThemeChange}>
       <div className="w-10 h-10 dark:bg-lightBlue bg-darkBlue text-white rounded-full flex items-center justify-center text-2xl">
         {value === "dark" ? <DarkMode /> : <LightMode />}
       </div>

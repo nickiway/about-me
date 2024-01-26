@@ -1,7 +1,5 @@
-import ThemeToggle from "../components/ThemeToggle";
 import IntroductionContainer from "../components/IntroductionContainer";
 import ProjectCardsList from "../components/ProjectCardsList";
-import CopyRightAlert from "../components/CopyRightAlert";
 
 const Home = () => {
   // data for IntroductionContainer
@@ -25,10 +23,8 @@ const Home = () => {
 
   return (
     <main className="flex-1">
-      <ThemeToggle />
       <IntroductionContainer data={authorData} />
       <ProjectCardsList projects={projectsData} />
-      <CopyRightAlert />
     </main>
   );
 };

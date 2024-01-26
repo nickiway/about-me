@@ -1,3 +1,7 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
 @font-face {
   font-family: "BitterRegular";
   src: url("../../fonts/Bitter/Bitter-Regular.ttf");
@@ -5,7 +9,23 @@
 * {
   scroll-behavior: smooth;
 }
-
 .bitter {
   font-family: "BitterRegular", sans-serif;
+}
+
+@layer components {
+  .primary-btn {
+    @apply rounded-lg
+    px-10
+    border-2
+    border-stone-950
+    py-2
+    cursor-pointer
+    hover:bg-stone-950
+    hover:text-white
+    dark:bg-lightBlue
+    dark:border-transparent
+    dark:text-white
+    dark:hover:bg-darkBlue;
+  }
 }

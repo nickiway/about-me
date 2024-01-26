@@ -12,9 +12,14 @@ interface ProjectCardProps {
     githubLink: string;
     image: string;
   };
+  isLeft?: boolean;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({
+  project,
+  index,
+  isLeft,
+}) => {
   const { name, description, technologies, githubLink, image } = project;
 
   const handleIndex = () => {
@@ -26,8 +31,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
 
   return (
     <div className="flex justify-center my-10" id="test">
-      <div className="container grid grid-cols-2 ">
-        <div className="wrapper pl-[10%]">
+      <div
+        className={"container md:flex " + (isLeft ? "" : "flex-row-reverse")}
+      >
+        <div className="wrapper w-full">
+          <img src={image} alt={name} />
+        </div>
+
+        <div className={"wrapper " + (isLeft ? "pr-[10%]" : "pl-[10%]")}>
           <div className="flex py-5">
             <Separator />
             <p className="dark:text-white px-5">{handleIndex()}</p>
@@ -61,9 +72,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
               </button>
             </Link>
           </div>
-        </div>
-        <div className="wrapper">
-          <img src={image} alt={name} />
         </div>
       </div>
     </div>

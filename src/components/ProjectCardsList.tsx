@@ -15,7 +15,12 @@ const ProjectCardsList: FC<ProjectCardsListProps> = ({ projects }) => {
   return (
     <div>
       {projects.map((project, id) => (
-        <ProjectCard key={id} project={project} index={id + 1} />
+        <ProjectCard
+          key={id}
+          project={project}
+          index={id + 1}
+          isLeft={id % 2 === 0 ? true : false}
+        />
       ))}
     </div>
   );
