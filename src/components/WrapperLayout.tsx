@@ -1,4 +1,5 @@
 import { FC } from "react";
+
 import useLocalStorage from "../hooks/useLocalStorage";
 import { ThemeContext } from "../context/ThemeContext";
 import CopyRightAlert from "./CopyRightAlert";
@@ -14,12 +15,16 @@ const WrapperLayout: FC<WrapperLayoutProps> = ({ children }) => {
   return (
     <ThemeContext.Provider value={{ value, setValue }}>
       <div className={value}>
-        <div className="min-h-screen dark:bg-secondary dark:text-white">
-          <Navigation />
+        <div className="layer-content">
+          <header>
+            <Navigation />
+          </header>
 
-          {children}
-          <CopyRightAlert />
+          <main>{children}</main>
         </div>
+        <footer>
+          <CopyRightAlert />
+        </footer>
       </div>
     </ThemeContext.Provider>
   );

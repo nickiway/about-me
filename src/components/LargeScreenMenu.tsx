@@ -1,48 +1,42 @@
 import { FC } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { Help } from "@mui/icons-material";
 
 import ThemeToggle from "./ThemeToggle";
 
 interface ScreenMenuProps {
-  routes: {
+  links: {
     path: string;
     label: string;
-  }[];
-  socials: {
-    icon: FC<{ style?: React.CSSProperties }>;
-    path: string;
+    icon?: FC;
   }[];
 }
 
-const LargeScreenMenu: FC<ScreenMenuProps> = ({ routes, socials }) => {
+const LargeScreenMenu: FC<ScreenMenuProps> = ({ links }) => {
   return (
-    <div className="hidden lg:block h-full">
-      <ThemeToggle classNameList="fixed top-10 right-10" />
-      <ul className="h-3/4 flex flex-col">
-        {routes.map(({ path, label }) => (
-          <li key={path}>
-            <NavLink
-              to={path}
-              className={({ isActive }) =>
-                `py-5 rotate-180 flex [writing-mode:vertical-lr] ${
-                  isActive ? "text-lightBlue" : ""
-                }`
-              }
-            >
-              {label}
-            </NavLink>
-          </li>
-        ))}
-      </ul>
-      <ul className="h-1/4 flex flex-col flex-col-reverse">
-        {socials.map(({ icon: IconComponent, path }) => (
-          <li key={path} className="py-3">
-            <Link target="blank" to={path}>
-              {IconComponent && <IconComponent style={{ height: "24px" }} />}
-            </Link>
-          </li>
-        ))}
-      </ul>
+    <div className="hidden md:flex h-screen">
+      <div className="h-full flex flex-col">
+        <ul className="h-2/3">
+          {links.map(({ path, label, icon: IconComponent }, index) => (
+            <li key={index} className="flex items-center justify-center">
+              <NavLink to={path}>
+                <div className="p-5">
+                  {IconComponent ? <IconComponent /> : label}
+                </div>
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+
+        <div className="h-1/3 flex flex-col flex-col-reverse">
+          <div className="flex justify-center p-3">
+            <ThemeToggle />
+          </div>
+          <div className="flex justify-center p-3">
+            <Help />
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

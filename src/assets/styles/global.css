@@ -13,6 +13,12 @@
   font-family: "BitterRegular", sans-serif;
 }
 
+.layer-content {
+  @apply dark:bg-secondary 
+  dark:text-white
+  md:flex;
+}
+
 @layer components {
   .primary-btn {
     @apply rounded-lg
@@ -27,5 +33,16 @@
     dark:border-transparent
     dark:text-white
     dark:hover:bg-darkBlue;
+  }
+
+  header {
+    @apply sticky
+    top-0
+    md:dark:bg-primary
+    md:bg-darkBlue
+    md:text-white
+    md:h-screen
+    relative
+    dark:text-white;
   }
 }

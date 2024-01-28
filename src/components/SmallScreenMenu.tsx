@@ -1,57 +1,60 @@
 import { FC } from "react";
 import { useState } from "react";
 
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Menu } from "@mui/icons-material";
 import ThemeToggle from "./ThemeToggle";
 
 interface ScreenMenuProps {
-  routes: {
+  links: {
     path: string;
     label: string;
-  }[];
-  socials: {
-    icon: FC<{ style?: React.CSSProperties }>;
-    path: string;
+    icon?: FC;
   }[];
 }
 
-const SmallScreenMenu: FC<ScreenMenuProps> = ({ routes, socials }) => {
+const SmallScreenMenu: FC<ScreenMenuProps> = ({ links }) => {
   const [navShowed, setNavShowed] = useState(false);
-
-  const isShowMenu = navShowed ? "block" : "hidden";
 
   const openMenu = () => {
     setNavShowed(!navShowed);
   };
 
   return (
-    <div className="block lg:hidden">
-      <button onClick={openMenu} className="z-30 fixed right-0">
+    <div className="flex flex-row-reverse md:hidden">
+      <button
+        onClick={openMenu}
+        className="m-5 p-2 rounded-full bg-slate-100 dark:bg-slate-900"
+      >
         <Menu className="cursor-pointer" fontSize="large" />
       </button>
 
       <div
         className={
-          "w-screen p-52 h-screen fixed z-20 opacity-90 bg-white dark:bg-slate-950 top-0 left-0 " +
-          isShowMenu
+          "fixed z-20 top-0 w-screen bg-slate-950 opacity-90 h-full  " +
+          (navShowed ? "block" : "hidden")
         }
       >
-        <ThemeToggle classNameList="fixed bottom-0 right-0 z-20" />
+        <button
+          onClick={openMenu}
+          className="m-5 p-2 rounded-full bg-slate-100 dark:bg-slate-900"
+        >
+          <Menu className="cursor-pointer" fontSize="large" />
+        </button>
 
-        <ul>
-          {routes.map(({ path, label }) => (
-            <li key={path}>
-              <NavLink to={path}>{label}</NavLink>
-            </li>
-          ))}
-        </ul>
-        <ul>
-          {socials.map(({ icon: IconComponent, path }) => (
-            <li key={path} className="py-3">
-              <Link target="blank" to={path}>
-                {IconComponent && <IconComponent style={{ height: "24px" }} />}
-              </Link>
+        <ul className="">
+          <li className="flex justify-center">
+            <ThemeToggle />
+          </li>
+
+          {links.map(({ path, label, icon: IconComponent }, index) => (
+            <li key={index} className="flex justify-center">
+              <NavLink to={path}>
+                <div className="p-5">
+                  {IconComponent && <IconComponent />}
+                  {label}
+                </div>
+              </NavLink>
             </li>
           ))}
         </ul>

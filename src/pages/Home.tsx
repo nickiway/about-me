@@ -22,10 +22,10 @@ const Home = () => {
   const projectsData = [sample, sample, sample, sample, sample, sample];
 
   return (
-    <main className="flex-1">
+    <div className="flex-1">
       <IntroductionContainer data={authorData} />
       <ProjectCardsList projects={projectsData} />
-    </main>
+    </div>
   );
 };
 
