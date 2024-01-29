@@ -1,4 +1,4 @@
-import NavigationData from "../data/navigation";
+import NavigationData from "../../data/navigation";
 
 import LargeScreenMenu from "./LargeScreenMenu";
 import SmallScreenMenu from "./SmallScreenMenu";

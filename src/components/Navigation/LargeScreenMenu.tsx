@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 import NavLinksList from "./NavLinksList";
-import ThemeToggle from "./ThemeToggle";
+import ThemeToggle from "../ThemeToggle";
 
 interface ScreenMenuProps {
   links: {

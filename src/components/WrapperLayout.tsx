@@ -3,7 +3,7 @@ import { FC } from "react";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { ThemeContext } from "../context/ThemeContext";
 
-import Navigation from "./Navigation";
+import Navigation from "./Navigation/Navigation";
 import Copyright from "./Copyright";
 
 interface WrapperLayoutProps {

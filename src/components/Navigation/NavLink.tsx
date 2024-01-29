@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-import { useHover } from "../hooks/useHover";
+import { useBoolean } from "../../hooks/useBoolean";
 
 import NavLinkLabel from "./NavLinkLabel";
 
@@ -11,13 +11,13 @@ interface NavLinkProps {
 }
 
 const MyNavLink = ({ path, IconComponent, label }: NavLinkProps) => {
-  const [hovered, { onMouseEnter, onMouseLeave }] = useHover(false);
+  const [hovered, { setTrue, setFalse }] = useBoolean(false);
 
   return (
     <li className="flex items-center justify-center">
       <NavLink
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
+        onMouseEnter={setTrue}
+        onMouseLeave={setFalse}
         className={({ isActive }) =>
           isActive ? " dark:text-lightBlue text-secondary" : undefined
         }

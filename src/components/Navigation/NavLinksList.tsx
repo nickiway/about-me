@@ -1,4 +1,4 @@
-import Link from "./NavLink";
+import MyNavLink from "./NavLink";
 
 interface NavLinksListProps {
   links: {
@@ -13,7 +13,7 @@ const NavLinksList = ({ links, className }: NavLinksListProps) => {
   return (
     <ul className={className}>
       {links.map(({ path, label, icon: IconComponent }, index) => (
-        <Link
+        <MyNavLink
           key={index}
           path={path}
           label={label}
