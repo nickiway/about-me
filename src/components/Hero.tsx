@@ -1,5 +1,6 @@
 import { FC } from "react";
-import Lottie, { Options } from "react-lottie";
+
+import LottieAnimation from "./LottieAnimation";
 
 import animationData from "../assets/images/scene1-2024-01-29.json";
 import scrollDownAnimationData from "../assets/images/Animation - 1706527873391.json";
@@ -14,26 +15,6 @@ interface HeroProps {
 const HeroSection: FC<HeroProps> = ({ data }) => {
   const { author, profession, subtitle } = data;
 
-  const options: Options = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-      className: "static z-[-1]",
-    },
-  };
-
-  const options2: Options = {
-    loop: true,
-    autoplay: true,
-    animationData: scrollDownAnimationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-      className: "static z-[-1]",
-    },
-  };
-
   return (
     <div className="min-h-screen">
       <div className="lg:flex ">
@@ -42,21 +23,21 @@ const HeroSection: FC<HeroProps> = ({ data }) => {
             <h1 className="bitter lg:text-[128px] text-6xl">
               Hi, <br /> I am <span className="text-darkBlue">{author}</span>
             </h1>
-            <h2 className="text-4xl uppercase">{profession}</h2>
+            <h2 className="lg:text-4xl text-2xl uppercase">{profession}</h2>
             <p className="dark:text-slate-300 my-10">{subtitle}</p>
           </div>
         </div>
         <div className="lg:w-1/2">
-          <Lottie options={options} speed={3} />
+          <LottieAnimation lotti={animationData} speed={3} />
         </div>
       </div>
       <div>
         <a href="#test">
-          <Lottie
-            options={options2}
-            isClickToPauseDisabled={true}
-            speed={1.5}
+          <LottieAnimation
+            lotti={scrollDownAnimationData}
             width={64}
+            speed={1.5}
+            isClickToPauseDisabled={true}
           />
         </a>
       </div>
