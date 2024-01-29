@@ -27,34 +27,27 @@ const Links = {
     },
     {
       icon: RocketLaunch,
-      label: "My Projects",
-      path: "projects",
+      label: "Details",
+      path: "details",
     },
     {
       icon: GitHub,
       label: "GitHub",
       path: "https://github.com/nickiway",
+      isSocial: true,
     },
     {
       icon: LinkedIn,
       label: "LinkedIn",
       path: "https://www.linkedin.com/in/nickiway/",
+      isSocial: true,
     },
     {
       icon: Instagram,
       label: "Instagram",
       path: "https://www.instagram.com/nickiway_/",
+      isSocial: true,
     },
-    // {
-    //   icon: undefined,
-    //   label: "Resume",
-    //   path: "/",
-    // },
-    // {
-    //   icon: undefined,
-    //   label: "Articles",
-    //   path: "/",
-    // },
   ],
 };
 

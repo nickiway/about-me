@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import WrapperLayout from "./components/WrapperLayout";
-import { Home, NotFound, About, Contact, Projects } from "./pages";
+import { Home, NotFound, About, Contact, Details } from "./pages";
 
 import "./assets/styles/global.css";
 
@@ -13,7 +13,7 @@ function App() {
           <Route index element={<Home />}></Route>
           <Route path="about" element={<About />}></Route>
           <Route path="contact" element={<Contact />}></Route>
-          <Route path="projects" element={<Projects />}></Route>
+          <Route path="details" element={<Details />}></Route>
           <Route path="*" element={<NotFound />}></Route>
         </Routes>
       </WrapperLayout>

@@ -19,7 +19,7 @@ const HeroSection: FC<HeroProps> = ({ data }) => {
     <div className="min-h-screen">
       <div className="lg:flex ">
         <div className="lg:w-1/2 flex items-center">
-          <div className="mx-20 mt-20 lg:m-0">
+          <div className="mx-10 mt-10 lg:m-0">
             <h1 className="bitter lg:text-[128px] text-6xl">
               Hi, <br /> I am <span className="text-darkBlue">{author}</span>
             </h1>

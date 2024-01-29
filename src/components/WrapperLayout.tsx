@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import useLocalStorage from "../hooks/useLocalStorage";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 import { ThemeContext } from "../context/ThemeContext";
 
 import Navigation from "./Navigation";

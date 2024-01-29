@@ -10,6 +10,7 @@ interface ScreenMenuProps {
     path: string;
     label: string;
     icon?: FC;
+    isSocial?: boolean;
   }[];
 }
 
@@ -32,32 +33,47 @@ const SmallScreenMenu: FC<ScreenMenuProps> = ({ links }) => {
       </div>
       <div
         className={
-          "fixed z-20 top-0 w-screen dark:bg-slate-950 bg-slate-100 opacity-90 h-screen " +
+          "fixed z-10 top-0 w-screen dark:bg-slate-950 bg-slate-100 opacity-95 h-screen  " +
           (navShowed ? "block" : "hidden")
         }
       >
-        <button
-          onClick={openMenu}
-          className="m-5 p-2 rounded-full bg-slate-100 dark:bg-slate-900"
-        >
-          <Menu className="cursor-pointer" fontSize="large" />
-        </button>
+        <div className="h-4/5 flex items-center justify-center">
+          <ul>
+            {links
+              .filter(({ isSocial }) => !isSocial)
+              .map(({ path, label }, index) => (
+                <li
+                  key={index}
+                  className="flex justify-center pointer font-bold bitter"
+                >
+                  <NavLink to={path}>
+                    <div className="p-5">
+                      <span className="p-5 uppercase">{label}</span>
+                    </div>
+                  </NavLink>
+                </li>
+              ))}
+          </ul>
+        </div>
+        <ul className="h-1/5 flex">
+          {links
+            .filter(({ isSocial }) => isSocial)
+            .map(({ path, icon: IconComponent }, index) => (
+              <li
+                key={index}
+                className="flex justify-center items-center pointer"
+              >
+                <NavLink to={path}>
+                  <div className="p-5">
+                    {IconComponent && <IconComponent />}
+                  </div>
+                </NavLink>
+              </li>
+            ))}
 
-        <ul className="">
-          <li className="flex justify-center pointer">
-            <ThemeToggle />
+          <li className="flex flex-1 flex-row-reverse">
+            <ThemeToggle classNameList="p-10" />
           </li>
-
-          {links.map(({ path, label, icon: IconComponent }, index) => (
-            <li key={index} className="flex justify-center pointer">
-              <NavLink to={path}>
-                <div className="p-5">
-                  {IconComponent && <IconComponent />}
-                  {label}
-                </div>
-              </NavLink>
-            </li>
-          ))}
         </ul>
       </div>
     </div>

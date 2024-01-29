@@ -1,7 +1,7 @@
 import About from "./About";
 import Contact from "./Contact";
 import Home from "./Home";
-import Projects from "./Projects";
+import Details from "./Details";
 import NotFound from "./NotFound";
 
-export { About, Contact, Home, NotFound, Projects };
+export { About, Contact, Home, NotFound, Details };

@@ -1,5 +1,6 @@
-import LargeScreenMenu from "./LargeScreenMenu";
 import NavigationData from "../data/navigation";
+
+import LargeScreenMenu from "./LargeScreenMenu";
 import SmallScreenMenu from "./SmallScreenMenu";
 
 const Navigation = () => {
@@ -7,10 +8,7 @@ const Navigation = () => {
 
   return (
     <nav>
-      {/* Large screens */}
       <LargeScreenMenu links={links} />
-
-      {/* Small screens */}
       <SmallScreenMenu links={links} />
     </nav>
   );
