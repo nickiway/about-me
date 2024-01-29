@@ -21,14 +21,15 @@ const SmallScreenMenu: FC<ScreenMenuProps> = ({ links }) => {
   };
 
   return (
-    <div className="flex flex-row-reverse md:hidden">
-      <button
-        onClick={openMenu}
-        className="m-5 p-2 rounded-full bg-slate-100 dark:bg-slate-900"
-      >
-        <Menu className="cursor-pointer" fontSize="large" />
-      </button>
-
+    <div className="flex flex-row-reverse lg:hidden">
+      <div className="fixed z-20">
+        <button
+          onClick={openMenu}
+          className="m-5 p-2 rounded-full bg-slate-100 dark:bg-slate-900"
+        >
+          <Menu className="cursor-pointer" fontSize="large" />
+        </button>
+      </div>
       <div
         className={
           "fixed z-20 top-0 w-screen bg-slate-950 opacity-90 h-full  " +

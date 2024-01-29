@@ -2,7 +2,6 @@ import { FC } from "react";
 
 import useLocalStorage from "../hooks/useLocalStorage";
 import { ThemeContext } from "../context/ThemeContext";
-import CopyRightAlert from "./CopyRightAlert";
 import Navigation from "./Navigation";
 
 interface WrapperLayoutProps {
@@ -20,11 +19,8 @@ const WrapperLayout: FC<WrapperLayoutProps> = ({ children }) => {
             <Navigation />
           </header>
 
-          <main>{children}</main>
+          <main className="flex-1">{children}</main>
         </div>
-        <footer>
-          <CopyRightAlert />
-        </footer>
       </div>
     </ThemeContext.Provider>
   );

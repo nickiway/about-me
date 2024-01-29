@@ -1,12 +1,13 @@
-import IntroductionContainer from "../components/IntroductionContainer";
+import Hero from "../components/Hero";
 import ProjectCardsList from "../components/ProjectCardsList";
 
 const Home = () => {
   // data for IntroductionContainer
-  const authorData = {
-    author: "Nick Shkitak",
-    profession: "Developer",
-    lyrics: ["Designer", "Coder"],
+  const heroData = {
+    author: "Nick",
+    profession: "Web Developer",
+    subtitle:
+      "Experienced Frontend React Developer. Proficient in various platforms, languages, and embedded systems. Experienced with the latest cutting edge development tools and procedures.",
   };
 
   const sample = {
@@ -22,9 +23,11 @@ const Home = () => {
   const projectsData = [sample, sample, sample, sample, sample, sample];
 
   return (
-    <div className="flex-1">
-      <IntroductionContainer data={authorData} />
-      <ProjectCardsList projects={projectsData} />
+    <div className="flex justify-center">
+      <div className="container">
+        <Hero data={heroData} />
+        <ProjectCardsList projects={projectsData} />
+      </div>
     </div>
   );
 };

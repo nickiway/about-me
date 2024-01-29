@@ -36,12 +36,12 @@
   }
 
   header {
-    @apply sticky
-    top-0
-    md:dark:bg-primary
-    md:bg-darkBlue
-    md:text-white
-    md:h-screen
+    @apply lg:sticky
+    lg:top-0
+    lg:dark:bg-primary
+    lg:bg-darkBlue
+    lg:text-white
+    lg:h-screen
     relative
     dark:text-white;
   }

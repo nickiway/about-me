@@ -14,7 +14,7 @@ interface ScreenMenuProps {
 
 const LargeScreenMenu: FC<ScreenMenuProps> = ({ links }) => {
   return (
-    <div className="hidden md:flex h-screen">
+    <div className="hidden lg:flex h-screen">
       <div className="h-full flex flex-col">
         <ul className="h-2/3">
           {links.map(({ path, label, icon: IconComponent }, index) => (
