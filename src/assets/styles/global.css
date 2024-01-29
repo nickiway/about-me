@@ -14,7 +14,8 @@
 }
 
 .layer-content {
-  @apply dark:bg-secondary 
+  @apply dark:bg-secondary
+  min-h-screen 
   dark:text-white
   md:flex;
 }

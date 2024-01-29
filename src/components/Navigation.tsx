@@ -7,8 +7,6 @@ const Navigation = () => {
 
   return (
     <nav>
-      {/* Logotype */}
-
       {/* Large screens */}
       <LargeScreenMenu links={links} />
 

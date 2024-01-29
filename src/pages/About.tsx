@@ -1,3 +1,6 @@
+import { NavLink } from "react-router-dom";
+
+import { Send } from "@mui/icons-material";
 import me from "../assets/images/me.jpg";
 
 const About = () => {
@@ -9,10 +12,15 @@ const About = () => {
             <h1 className="text-4xl py-5">Hi there</h1>
 
             <p className="text-lg leading-7 py-5">
-              I'm a software engineer who enjoys building things that live on
-              the internet. I develop exceptional websites and web apps that
-              provide intuitive, pixel-perfect user interfaces with efficient
-              and modern backends.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Recusandae sunt nobis quibusdam minima nihil! Earum quo optio
+              repellat iure fugiat! Minus ducimus vero nam! Nemo molestias
+              repellat ab ipsam tempore ut laboriosam tenetur asperiores libero
+              culpa eaque veritatis itaque labore, hic, repudiandae est adipisci
+              maiores in veniam excepturi. Aspernatur totam, quibusdam natus
+              impedit numquam molestias perspiciatis dolore, ab asperiores quas
+              similique illum iste culpa vero perferendis facere facilis
+              accusamus quis soluta eaque laboriosam! Beatae, nemo?
             </p>
             <p className="text-lg leading-7 py-5">
               Shortly after graduating from the University of California, Santa
@@ -20,23 +28,20 @@ const About = () => {
               on a wide variety of interesting and meaningful projects on a
               daily basis.
             </p>
-            <p className="text-lg leading-7 py-5">
-              Here's a few technologies I've been working with recently:
-            </p>
-            <ul className="list-disc pl-10">
-              <li>TypeScript</li>
-              <li>React</li>
-              <li>Node.js</li>
-              <li>Express.js</li>
-              <li>GraphQL</li>
-              <li>PostgreSQL</li>
-              <li>MongoDB</li>
-            </ul>
-            <div>Contact Me</div>
+
+            <div>
+              <NavLink
+                to="../contact"
+                className="text-l uppercase text-darkBlue font-bold hover:text-slate-300 transition-all duration-300 ease-in-out"
+              >
+                <Send /> Send Me A Message
+              </NavLink>
+            </div>
           </div>
         </div>
         <div className="py-10 px-10 ">
-          <img src={me} alt="Me" />
+          <h1 className="pt-20 pb-10">About me</h1>
+          <img src={me} className="rounded-md" alt="Me" />
         </div>
       </div>
     </div>

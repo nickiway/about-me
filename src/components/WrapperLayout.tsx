@@ -2,7 +2,9 @@ import { FC } from "react";
 
 import useLocalStorage from "../hooks/useLocalStorage";
 import { ThemeContext } from "../context/ThemeContext";
+
 import Navigation from "./Navigation";
+import Copyright from "./Copyright";
 
 interface WrapperLayoutProps {
   children: React.ReactNode;
@@ -19,7 +21,10 @@ const WrapperLayout: FC<WrapperLayoutProps> = ({ children }) => {
             <Navigation />
           </header>
 
-          <main className="flex-1">{children}</main>
+          <main className="flex-1">
+            {children}
+            <Copyright />
+          </main>
         </div>
       </div>
     </ThemeContext.Provider>

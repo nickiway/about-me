@@ -32,7 +32,7 @@ const SmallScreenMenu: FC<ScreenMenuProps> = ({ links }) => {
       </div>
       <div
         className={
-          "fixed z-20 top-0 w-screen bg-slate-950 opacity-90 h-full  " +
+          "fixed z-20 top-0 w-screen dark:bg-slate-950 bg-slate-100 opacity-90 h-screen " +
           (navShowed ? "block" : "hidden")
         }
       >
@@ -44,12 +44,12 @@ const SmallScreenMenu: FC<ScreenMenuProps> = ({ links }) => {
         </button>
 
         <ul className="">
-          <li className="flex justify-center">
+          <li className="flex justify-center pointer">
             <ThemeToggle />
           </li>
 
           {links.map(({ path, label, icon: IconComponent }, index) => (
-            <li key={index} className="flex justify-center">
+            <li key={index} className="flex justify-center pointer">
               <NavLink to={path}>
                 <div className="p-5">
                   {IconComponent && <IconComponent />}

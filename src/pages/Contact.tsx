@@ -1,56 +1,17 @@
-import { useForm, SubmitHandler, Controller } from "react-hook-form";
-import emailjs from "@emailjs/browser";
+import { Controller } from "react-hook-form";
+
+import { useFormHook } from "../hooks/useFormHook";
 
 import { Input, Textarea } from "@mui/joy";
 import { Send } from "@mui/icons-material";
-
 import Separator from "../components/Separator";
-import { useRef } from "react";
-
-interface Inputs {
-  email: string;
-  message: string;
-}
 
 const Contact = () => {
-  const serviceID: string = import.meta.env.VITE_EMAILJS_SERVICE_ID || "";
-  const templateID: string = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "";
-  const userPublicKey: string =
-    import.meta.env.VITE_EMAILJS_USER_PUBLIC_KEY || "";
-
-  const form = useRef(null);
-
-  const {
-    control,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm<Inputs>();
-
-  const onSubmit: SubmitHandler<Inputs> = () => {
-    if (!form.current) {
-      return;
-    }
-
-    emailjs.sendForm(serviceID, templateID, form.current, userPublicKey).then(
-      (result) => {
-        console.log(result.text);
-        alert("Message sent successfully!");
-        reset();
-      },
-      (error) => {
-        console.log(error.text);
-        alert("Message failed to send!");
-      }
-    );
-  };
+  const [control, handleSubmit, errors, form, onSubmit] = useFormHook();
 
   return (
-    <div
-      className="flex justify-center h-full items-center relative container m-auto"
-      style={{ zIndex: 0 }}
-    >
-      <div className="w-2/5 py-10">
+    <div className="flex justify-center items-center relative container">
+      <div className="w-full px-5 lg:w-2/5 py-10">
         <div className="py-10">
           <h1 className="text-3xl bitter py-5 font-bold">Say Hello</h1>
           <Separator />
@@ -70,7 +31,6 @@ const Contact = () => {
               }}
               render={({ field }) => (
                 <Input
-                  style={{ zIndex: 0 }}
                   className={"py-2"}
                   color={errors.email ? "danger" : "neutral"}
                   placeholder="Email"
@@ -89,7 +49,6 @@ const Contact = () => {
               rules={{ required: "This field is required!" }}
               render={({ field }) => (
                 <Textarea
-                  style={{ position: "static", zIndex: 0 }}
                   className="py-2 "
                   color={errors.message ? "danger" : "neutral"}
                   placeholder="Message"
