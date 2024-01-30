@@ -1,50 +1,49 @@
-// TODO: Make Single Responsibility Principle component from this component
-const NavResponsiveLayout = () => {
-  return (
-    <div></div>
-    // <div
-    //   className={
-    //     "fixed z-10 top-0 w-screen dark:bg-slate-950 bg-slate-100 opacity-95 h-screen  " +
-    //     (isNavShowed ? "block" : "hidden")
-    //   }
-    // >
-    //   <div className="h-4/5 flex items-center justify-center">
-    //     <ul>
-    //       {links
-    //         .filter(({ isSocial }) => !isSocial)
-    //         .map(({ path, label }, index) => (
-    //           <li
-    //             key={index}
-    //             className="flex justify-center pointer font-bold bitter"
-    //           >
-    //             <NavLink to={path}>
-    //               <div className="p-5">
-    //                 <span className="p-5 uppercase">{label}</span>
-    //               </div>
-    //             </NavLink>
-    //           </li>
-    //         ))}
-    //     </ul>
-    //   </div>
-    //   <ul className="h-1/5 flex">
-    //     {links
-    //       .filter(({ isSocial }) => isSocial)
-    //       .map(({ path, icon: IconComponent }, index) => (
-    //         <li
-    //           key={index}
-    //           className="flex justify-center items-center pointer"
-    //         >
-    //           <NavLink to={path}>
-    //             <div className="p-5">{IconComponent && <IconComponent />}</div>
-    //           </NavLink>
-    //         </li>
-    //       ))}
+import NavLinksList from "./NavLinksList";
+import ThemeToggle from "../ThemeToggle";
 
-    //     <li className="flex flex-1 flex-row-reverse">
-    //       <ThemeToggle classNameList="p-10" />
-    //     </li>
-    //   </ul>
-    // </div>
+interface NavResponsiveLayoutProps {
+  isNavShowed: boolean;
+  links: {
+    isSocial?: boolean;
+    path: string;
+    label: string;
+    icon?: React.FC;
+  }[];
+}
+
+const NavResponsiveLayout = ({
+  isNavShowed,
+  links,
+}: NavResponsiveLayoutProps) => {
+  const routes = links.filter(({ isSocial }) => !isSocial);
+  const socials = links.filter(({ isSocial }) => isSocial);
+
+  return (
+    isNavShowed && (
+      <div className="nav-responsive-layout">
+        <div className="h-4/5 flex items-center justify-center">
+          <NavLinksList
+            linkClassName="bitter uppercase"
+            links={routes}
+            className="flex flex-col"
+            displayDataType="text"
+          />
+        </div>
+        <div className="h-1/5 flex">
+          <NavLinksList
+            links={socials}
+            className="flex h-full"
+            linkClassName="cursor-pointer"
+            displayDataType="icon"
+            displayLabelOnHover={false}
+          />
+
+          <div className="flex flex-row-reverse flex-1">
+            <ThemeToggle classNameList="p-10" />
+          </div>
+        </div>
+      </div>
+    )
   );
 };
 

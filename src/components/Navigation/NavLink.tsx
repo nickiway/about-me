@@ -7,10 +7,20 @@ import NavLinkLabel from "./NavLinkLabel";
 interface NavLinkProps {
   path: string;
   label: string;
+  displayLabelOnHover?: boolean;
+  stylingClasses?: string;
   IconComponent?: React.FC;
+  displayDataType: "icon" | "text";
 }
 
-const MyNavLink = ({ path, IconComponent, label }: NavLinkProps) => {
+const MyNavLink = ({
+  path,
+  IconComponent,
+  label,
+  stylingClasses,
+  displayLabelOnHover,
+  displayDataType,
+}: NavLinkProps) => {
   const [hovered, { setTrue, setFalse }] = useBoolean(false);
 
   return (
@@ -19,14 +29,22 @@ const MyNavLink = ({ path, IconComponent, label }: NavLinkProps) => {
         onMouseEnter={setTrue}
         onMouseLeave={setFalse}
         className={({ isActive }) =>
-          isActive ? " dark:text-lightBlue text-secondary" : undefined
+          (isActive ? " dark:text-lightBlue text-secondary" : "") +
+          " " +
+          stylingClasses
         }
         to={path}
       >
-        <div className="p-5">{IconComponent ? <IconComponent /> : label}</div>
+        <div className="p-5">
+          {IconComponent && displayDataType === "icon" ? (
+            <IconComponent />
+          ) : (
+            label
+          )}
+        </div>
       </NavLink>
 
-      {hovered && (
+      {hovered && displayLabelOnHover && (
         <NavLinkLabel
           label={label}
           className="absolute bg-slate-100 dark:bg-slate-950 rounded-md p-1 text-xm  text-slate-900 dark:text-slate-100 left-20"

@@ -1,10 +1,8 @@
 import { FC } from "react";
 
-import { NavLink } from "react-router-dom";
-
 import { useBoolean } from "../../hooks/useBoolean";
 
-import ThemeToggle from "../ThemeToggle";
+import NavResponsiveLayout from "./NavResponsiveLayout";
 import ToggleMenuBtn from "./ToggleMenuBtn";
 
 interface ScreenMenuProps {
@@ -24,6 +22,7 @@ const SmallScreenMenu: FC<ScreenMenuProps> = ({ links }) => {
       <div className="fixed z-20 right-0">
         <ToggleMenuBtn setNavShowed={setNavShowed} />
       </div>
+      <NavResponsiveLayout isNavShowed={isNavShowed} links={links} />
     </div>
   );
 };

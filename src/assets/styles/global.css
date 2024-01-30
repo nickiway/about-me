@@ -49,4 +49,15 @@
     relative
     dark:text-white;
   }
+
+  .nav-responsive-layout {
+    @apply fixed 
+    z-10 
+    top-0 
+    w-screen 
+    dark:bg-slate-950 
+    bg-slate-100 
+    opacity-90 
+    h-screen;
+  }
 }
