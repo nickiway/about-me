@@ -1,5 +1,5 @@
 import NavLinksList from "./NavLinksList";
-import ThemeToggle from "../ThemeToggle";
+import ThemeToggle from "./ThemeToggle";
 
 interface NavResponsiveLayoutProps {
   isNavShowed: boolean;
@@ -23,7 +23,7 @@ const NavResponsiveLayout = ({
       <div className="nav-responsive-layout">
         <div className="h-4/5 flex items-center justify-center">
           <NavLinksList
-            linkClassName="bitter uppercase"
+            linkClassName="bitter uppercase font-bold cursor-pointer"
             links={routes}
             className="flex flex-col"
             displayDataType="text"

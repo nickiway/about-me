@@ -29,7 +29,7 @@ const MyNavLink = ({
         onMouseEnter={setTrue}
         onMouseLeave={setFalse}
         className={({ isActive }) =>
-          (isActive ? " dark:text-lightBlue text-secondary" : "") +
+          (isActive ? "dark:text-lightBlue text-darkBlue" : undefined) +
           " " +
           stylingClasses
         }

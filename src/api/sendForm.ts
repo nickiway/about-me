@@ -22,13 +22,11 @@ export const sendForm = ({
   }
 
   emailjs.sendForm(serviceID, templateID, form.current, userPublicKey).then(
-    (result) => {
-      console.log(result.text);
+    () => {
       alert("Message sent successfully!");
       reset();
     },
-    (error) => {
-      console.log(error.text);
+    () => {
       alert("Message failed to send!");
     }
   );

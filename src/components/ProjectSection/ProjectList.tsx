@@ -1,7 +1,6 @@
-import { FC } from "react";
-import ProjectCard from "./ProjectCard";
+import Project from "./Project";
 
-interface ProjectCardsListProps {
+interface ProjectListProps {
   projects: {
     name: string;
     description: string;
@@ -11,18 +10,18 @@ interface ProjectCardsListProps {
   }[];
 }
 
-const ProjectCardsList: FC<ProjectCardsListProps> = ({ projects }) => {
+const ProjectCardsList = ({ projects }: ProjectListProps) => {
   return (
-    <div>
+    <>
       {projects.map((project, id) => (
-        <ProjectCard
+        <Project
           key={id}
           project={project}
           index={id + 1}
           isLeft={id % 2 === 0 ? true : false}
         />
       ))}
-    </div>
+    </>
   );
 };
 

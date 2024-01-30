@@ -21,9 +21,11 @@ const WrapperLayout: FC<WrapperLayoutProps> = ({ children }) => {
             <Navigation />
           </header>
 
-          <main className="flex-1">
-            {children}
-            <Copyright />
+          <main className="flex flex-1 justify-center">
+            <article className="container">
+              {children}
+              <Copyright />
+            </article>
           </main>
         </div>
       </div>

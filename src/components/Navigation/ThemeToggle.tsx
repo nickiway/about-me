@@ -1,5 +1,5 @@
 import { useContext, FC } from "react";
-import { ThemeContext } from "../context/ThemeContext";
+import { ThemeContext } from "../../context/ThemeContext";
 import { DarkMode, LightMode } from "@mui/icons-material";
 
 interface ThemeToggleProps {

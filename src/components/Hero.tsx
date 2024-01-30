@@ -16,8 +16,8 @@ const HeroSection: FC<HeroProps> = ({ data }) => {
   const { author, profession, subtitle } = data;
 
   return (
-    <div className="min-h-screen">
-      <div className="lg:flex ">
+    <div className="h-screen flex flex-col">
+      <div className="lg:flex h-4/5">
         <div className="lg:w-1/2 flex items-center">
           <div className="mx-10 mt-10 lg:m-0">
             <h1 className="bitter lg:text-[128px] text-6xl">
@@ -31,7 +31,7 @@ const HeroSection: FC<HeroProps> = ({ data }) => {
           <LottieAnimation lotti={animationData} speed={3} />
         </div>
       </div>
-      <div>
+      <div className="flex flex-col-reverse h-1/5 p-10">
         <a href="#test">
           <LottieAnimation
             lotti={scrollDownAnimationData}
