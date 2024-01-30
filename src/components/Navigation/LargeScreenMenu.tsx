@@ -15,7 +15,13 @@ const LargeScreenMenu: FC<ScreenMenuProps> = ({ links }) => {
   return (
     <div className="hidden lg:flex h-screen">
       <div className="h-full flex flex-col">
-        <NavLinksList className="h-3/4" links={links} displayDataType="icon" />
+        <NavLinksList
+          className="h-3/4"
+          links={links}
+          displayDataType="icon"
+          displayLabelOnHover={true}
+          linkClassName="cursor-pointer"
+        />
 
         <div className="h-1/4 flex flex-col-reverse">
           <ThemeToggle classNameList="py-5" />

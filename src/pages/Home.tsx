@@ -1,5 +1,5 @@
 import Hero from "../components/Hero";
-import ProjectList from "../components/ProjectSection/ProjectList";
+import ProjectList from "../components/Projects/ProjectList";
 
 import projectsData from "../data/projects";
 import heroData from "../data/hero";
