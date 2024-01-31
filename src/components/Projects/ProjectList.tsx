@@ -12,7 +12,7 @@ interface ProjectListProps {
 
 const ProjectCardsList = ({ projects }: ProjectListProps) => {
   return (
-    <>
+    <div id="project-list">
       {projects.map((project, id) => (
         <Project
           key={id}
@@ -21,7 +21,7 @@ const ProjectCardsList = ({ projects }: ProjectListProps) => {
           isLeft={id % 2 === 0 ? true : false}
         />
       ))}
-    </>
+    </div>
   );
 };
 

@@ -4,6 +4,7 @@ interface ProjectImageProps {
 }
 
 const ProjectImage = ({ image, name }: ProjectImageProps) => {
+  console.log("render ProjectImage");
   return (
     <div className="w-full ">
       <img src={image} alt={name} />

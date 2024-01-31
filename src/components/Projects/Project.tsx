@@ -1,5 +1,7 @@
 import ProjectBody from "./ProjectBody";
 
+import handlePorjectIndex from "../../util/handleProjectIndex";
+
 interface ProjectProps {
   index: number;
   project: {
@@ -12,12 +14,9 @@ interface ProjectProps {
   isLeft?: boolean;
 }
 
-const handleIndex = (index: number): string =>
-  index < 10 && index > 0 ? `0${index}` : index.toString();
-
 const Project = ({ project, index, isLeft }: ProjectProps) => {
   const { image, ...textSectionData } = project;
-  const elementIndex = handleIndex(index);
+  const elementIndex = handlePorjectIndex(index);
 
   return (
     <section className="flex justify-center my-10" id={elementIndex}>

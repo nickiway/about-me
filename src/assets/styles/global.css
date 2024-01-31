@@ -24,6 +24,11 @@
 }
 
 @layer components {
+  .section-title {
+    @apply text-4xl
+    font-bold
+    dark:text-white;
+  }
   .primary-btn {
     @apply rounded-lg
     px-10

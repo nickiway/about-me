@@ -1,5 +1,3 @@
-import { FC } from "react";
-
 import LottieAnimation from "./LottieAnimation";
 
 import animationData from "../assets/images/scene1-2024-01-29.json";
@@ -12,7 +10,8 @@ interface HeroProps {
     subtitle: string;
   };
 }
-const HeroSection: FC<HeroProps> = ({ data }) => {
+
+const HeroSection = ({ data }: HeroProps) => {
   const { author, profession, subtitle } = data;
 
   return (
@@ -32,7 +31,7 @@ const HeroSection: FC<HeroProps> = ({ data }) => {
         </div>
       </div>
       <div className="flex flex-col-reverse h-1/5 p-10">
-        <a href="#test">
+        <a href="#project-list">
           <LottieAnimation
             lotti={scrollDownAnimationData}
             width={64}

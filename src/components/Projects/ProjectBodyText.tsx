@@ -14,6 +14,7 @@ interface ProjectTextSectionProps {
 }
 const ProjectTextSection = ({ data }: ProjectTextSectionProps) => {
   const { elementIndex, description, githubLink, name, technologies } = data;
+
   return (
     <div>
       <div className="flex py-2">
