@@ -5,7 +5,6 @@ import {
   Face,
   Mail,
   Home,
-  RocketLaunch,
 } from "@mui/icons-material";
 
 const Links = {
@@ -25,11 +24,11 @@ const Links = {
       label: "Contact",
       path: "contact",
     },
-    {
-      icon: RocketLaunch,
-      label: "Details",
-      path: "details",
-    },
+    // {
+    //   icon: RocketLaunch,
+    //   label: "Details",
+    //   path: "details",
+    // },
     {
       icon: GitHub,
       label: "GitHub",

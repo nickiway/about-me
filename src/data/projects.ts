@@ -6,8 +6,9 @@ const sample = {
   image:
     "https://dlcdnwebimgs.asus.com/gain/b343cf33-4593-46b4-91ae-ce5f547572a2/",
   githubLink: "https://github.com/nickiway/promptopia-nextjs-app",
+  link: "https://promptopia-project-nicks-projects-eb354514.vercel.app",
 };
 
-const projectsData = [sample, sample, sample, sample, sample, sample];
+const projectsData = [sample, sample];
 
 export default projectsData;

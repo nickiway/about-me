@@ -15,8 +15,8 @@ const HeroSection = ({ data }: HeroProps) => {
   const { author, profession, subtitle } = data;
 
   return (
-    <div className="h-screen flex flex-col">
-      <div className="lg:flex h-4/5">
+    <div className="h-screen flex flex-col bg-repeat-0">
+      <div className="lg:flex h-[90%] ">
         <div className="lg:w-1/2 flex items-center">
           <div className="mx-10 mt-10 lg:m-0">
             <h1 className="bitter lg:text-[128px] text-6xl">
@@ -30,7 +30,7 @@ const HeroSection = ({ data }: HeroProps) => {
           <LottieAnimation lotti={animationData} speed={3} />
         </div>
       </div>
-      <div className="flex flex-col-reverse h-1/5 p-10">
+      <div className="flex flex-col-reverse h-[10%]  ">
         <a href="#project-list">
           <LottieAnimation
             lotti={scrollDownAnimationData}

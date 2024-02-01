@@ -8,12 +8,14 @@ interface ProjectTextSectionProps {
     elementIndex: string;
     description: string;
     githubLink: string;
+    link: string;
     name: string;
     technologies: string[];
   };
 }
 const ProjectTextSection = ({ data }: ProjectTextSectionProps) => {
-  const { elementIndex, description, githubLink, name, technologies } = data;
+  const { elementIndex, description, githubLink, link, name, technologies } =
+    data;
 
   return (
     <div>
@@ -33,6 +35,12 @@ const ProjectTextSection = ({ data }: ProjectTextSectionProps) => {
         <Link to={githubLink}>
           <button className="bg-lightBlue rounded-full px-5 py-2 text-white mr-5 mb-5">
             View Code {"->"}
+          </button>
+        </Link>
+
+        <Link to={link}>
+          <button className="bg-lightBlue rounded-full px-5 py-2 text-white mr-5 mb-5">
+            Live version {"->"}
           </button>
         </Link>
       </div>

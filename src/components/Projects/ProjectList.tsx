@@ -7,6 +7,7 @@ interface ProjectListProps {
     technologies: string[];
     githubLink: string;
     image: string;
+    link: string;
   }[];
 }
 

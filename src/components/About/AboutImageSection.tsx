@@ -4,7 +4,11 @@ interface AboutImageProps {
 }
 
 const AboutImageSection = ({ image, alt }: AboutImageProps) => {
-  return <img src={image} className="p-10 " alt={alt} />;
+  return (
+    <div className="lg:w-1/2 flex justify-center">
+      <img src={image} className="rounded-lg w-4/5 m-5" alt={alt} />;
+    </div>
+  );
 };
 
 export default AboutImageSection;

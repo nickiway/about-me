@@ -9,6 +9,7 @@ interface ProjectBodyProps {
     elementIndex: string;
     description: string;
     githubLink: string;
+    link: string;
     name: string;
     technologies: string[];
   };
@@ -29,7 +30,7 @@ const ProjectBody = ({
   return (
     <>
       {renderOrder.map((element, id) => (
-        <div key={id} className="w-full">
+        <div key={id} className="w-1/2">
           {element}
         </div>
       ))}

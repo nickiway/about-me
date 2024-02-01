@@ -9,6 +9,7 @@ interface ProjectProps {
     description: string;
     technologies: string[];
     githubLink: string;
+    link: string;
     image: string;
   };
   isLeft?: boolean;
@@ -19,7 +20,10 @@ const Project = ({ project, index, isLeft }: ProjectProps) => {
   const elementIndex = handlePorjectIndex(index);
 
   return (
-    <section className="flex justify-center my-10" id={elementIndex}>
+    <section
+      className="flex justify-center  items-center my-10"
+      id={elementIndex}
+    >
       <ProjectBody
         isLeft={isLeft}
         image={image}
