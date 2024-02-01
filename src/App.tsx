@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
 import WrapperLayout from "./components/WrapperLayout";
 import { HomePage, NotFoundPage, AboutPage, ContactPage } from "./pages";
@@ -7,7 +7,7 @@ import "./assets/styles/global.css";
 
 function App() {
   return (
-    <Router>
+    <Router basename={import.meta.env.VITE_PUBLIC_URL}>
       <WrapperLayout>
         <Routes>
           <Route index element={<HomePage />}></Route>

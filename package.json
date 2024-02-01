@@ -2,6 +2,7 @@
   "name": "about-me",
   "private": false,
   "version": "0.0.0",
+  "homepage": "https://nickiway.github.io/about-me/",
   "type": "module",
   "scripts": {
     "predeploy": "yarn run build",
