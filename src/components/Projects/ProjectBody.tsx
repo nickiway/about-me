@@ -30,7 +30,7 @@ const ProjectBody = ({
   return (
     <>
       {renderOrder.map((element, id) => (
-        <div key={id} className="w-1/2">
+        <div key={id} className="lg:w-1/2 px-5">
           {element}
         </div>
       ))}

@@ -21,7 +21,7 @@ const Project = ({ project, index, isLeft }: ProjectProps) => {
 
   return (
     <section
-      className="flex justify-center  items-center my-10"
+      className="lg:flex justify-center items-center my-10"
       id={elementIndex}
     >
       <ProjectBody
